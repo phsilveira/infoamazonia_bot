@@ -1,4 +1,4 @@
-#!/home/wilson/Desktop/page/infoamazonia_bot/venv/bin/python3
+#!/Users/paulohenrique/Documents/freela/infoamazonia_bot/venv/bin/python3.12
 # -*- coding: utf-8 -*-
 import re
 import sys

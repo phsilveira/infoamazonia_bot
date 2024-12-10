@@ -26,6 +26,16 @@ pip install -r requirements.txt
 ```
 3. Configure the necessary API credentials and settings (see project documentation for details).
 
+Setting up MongoDB with Docker
+To set up a MongoDB instance using Docker, follow these steps:
+
+Pull the MongoDB Docker image and run a container with the specified configuration:
+This command will start a MongoDB container with the database name infoamazonia_bot and expose it on port 27017.
+
+```bash
+docker run -d --name infoamazonia_bot -p 27017:27017 -e MONGO_INITDB_DATABASE=infoamazonia_bot mongo
+```
+
 ## Usage
 
 To use the InfoAmazonia Bot, run the bot script:

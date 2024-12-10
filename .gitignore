@@ -1,6 +1,109 @@
-venv
+# Byte-compiled Python files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables file
+.env
+
+# Virtual environment folders
+.venv/
+venv/
+env/
+ENV/
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info/
+
+# PyInstaller files
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code files
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# IDE files (JetBrains, PyCharm, etc.)
+.idea/
+*.iml
+
+# Logs and debugging
+*.log
+*.out
+*.err
+
+# Flask-Specific files
+instance/
+*.sqlite3
+*.db
+
+# Pyre (static type checker) files
+.pyre/
+
+# MyPy type checker files
+.mypy_cache/
+
+# Bandit (security analysis) files
+.bandit/
+
+# Cache files
+*.swp
+*.swo
+.cache/
 *.pyc
 *.pyo
-*.pyd
-__pycache__
-*.so
+
+# Sphinx documentation
+docs/_build/
+
+# Local development files
+*.local
+*.log
+
+# Test coverage directory
+htmlcov/
+
+# PyCharm Coverage Reports
+.pytest_cache/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Lock files
+poetry.lock
+Pipfile.lock
+
+# Node.js (if you are using npm/yarn with Flask)
+node_modules/
+
+# Docker files
+docker-compose.override.yml
+docker-compose.override.yaml
+.dockerignore

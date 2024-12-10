@@ -13,26 +13,29 @@ from pymongo.errors import ConnectionFailure
 
 class DataBase:
 
-    def __init__(self, configfile):
+    def __init__(self, configfile=None):
+        mongo_uri = os.getenv("MONGO_URI")
+        if not mongo_uri:
+            try:
+                config_file = open("db/db.json", "r")
+            except FileNotFoundError as e:
+                print("DataBase config not found!")
+                exit(1)
+
+            try:
+                db_config = json.load(config_file)
+                host = db_config.get("host")
+                port = db_config.get("port")
+                self.db_name = db_config.get("dbname")
+            except json.decoder.JSONDecodeError as e:
+                print("Invalid database file, check your db.json")
+                exit(1)
+
+            mongo_uri = f"mongodb://{host}:{port}/{self.db_name}"
 
         try:
-            config_file = open("db/db.json", "r")
-        except FileNotFoundError as e:
-            print("DataBase config not found!")
-            exit(1)
-
-        try:
-            db_config = json.load(config_file)
-            host = db_config.get("host")
-            port = db_config.get("port")
-            self.db_name = db_config.get("dbname")
-        except json.decoder.JSONDecodeError as e:
-            print("Invalid database file, check your db.json")
-            exit(1)
-
-        try:
-            self.client = MongoClient(host, port)
-            self.db = self.client[self.db_name]
+            self.client = MongoClient(mongo_uri)
+            self.db = self.client.get_database()
             self.client.admin.command("ismaster")
         except ConnectionFailure:
             print("Database server not available")

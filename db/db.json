@@ -1,1 +1,1 @@
-{ "dbname": "infoamazonia_bot", "host": "localhost", "port": 27017 }
+{ "dbname": "infoamazonia_bot", "host": "mongodb", "port": 27017 }

@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: infoamazonia_bot_mongo
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: infoamazonia_bot
+    volumes:
+      - mongo_data:/data/db
+
+  bot:
+    build: .
+    container_name: infoamazonia_bot
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/infoamazonia_bot
+    ports:
+      - "5001:5001"
+    command: ["python", "bot.py"]
+    volumes:
+      - db:/app/db
+
+volumes:
+  mongo_data:
+  db:

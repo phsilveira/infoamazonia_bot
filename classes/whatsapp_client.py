@@ -28,8 +28,8 @@ from datetime import datetime, timedelta
 class WhatsAppWrapper:
 
     API_URL = "https://graph.facebook.com/v21.0/"
-    API_TOKEN = "EAB0g9x2ZANAcBO4YAIJSg1Hig6sMiBCme4bC8adIjx7hLVAoqf3HZC5eM1MGZC3WwW6uQvfA8irBtEJ2ezR99K1D2M6mf97wxuP9358l5xzp86rutmuwR03ZBvjamW1uiP9RnbUV6cjChS0hNTCLutAKV1DatOwZAni6V8z1QnDw6E1OFKHJg9IBoNKN1crbpQvQZBRcSUn497ZBMovzv5g9rmkHND2mNcZD"
-    NUMBER_ID = "526799370506048"
+    API_TOKEN = ""
+    NUMBER_ID = ""
 
     def __init__(self):
         self.headers = {
